@@ -44,8 +44,19 @@ module.exports = {
       {
         test: /\.css$/,
         include: helpers.root('src', 'app'),
+        //raw-loader is what Angular expects to do with styles specified in a styleUrls metadata property.
         loader: 'raw-loader'
-      }
+      },
+
+      // support for .scss files
+      {
+        test: /\.(scss|sass)$/,
+        exclude:  helpers.root('src', 'app'),
+        loader:  ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: ['css-loader', 'sass-loader']})
+      },
+      // all css required in src/app files will be merged in js files
+      {test: /\.(scss|sass)$/, exclude: helpers.root('src', 'style'), loader: 'raw-loader!sass-loader'}
+      //loader: 'raw-loader!sass-loader' alternative syntax loader: ['raw-loader', 'sass-loader']
     ]
   },
 

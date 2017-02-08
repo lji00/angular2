@@ -47,6 +47,8 @@
     "webpack-dev-server": "2.2.0-rc.0",
     "webpack-merge": "^2.4.0",
     "@angularclass/hmr": "^1.0.1",
-    "@angularclass/hmr-loader": "^3.0.2"
+    "@angularclass/hmr-loader": "^3.0.2",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^4.1.1"
   }
 }
