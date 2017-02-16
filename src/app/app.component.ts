@@ -1,4 +1,3 @@
-//<reference path="../typings/main.d.ts"/>   /*With this typing errors without $ error */
 
 import { Component } from '@angular/core';
 import '../../public/css/styles.css';

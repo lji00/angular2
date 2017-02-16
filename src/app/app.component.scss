@@ -1,9 +1,12 @@
+@import '../variable';
+
 main {
   padding: 1em;
   font-family: Arial, Helvetica, sans-serif;
   text-align: right;
   margin-top: 50px;
   display: block;
+  background-color: $default-background-color;
   .htest {
     text-align: center;
     color: #FF9999;
