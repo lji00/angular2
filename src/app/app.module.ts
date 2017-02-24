@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import {DashboardModule} from './dashboard/dashboard.module';
 import {AppRoutingModule}  from './app.routing.module';
 @NgModule({
     imports: [
-        BrowserModule, DashboardModule, AppRoutingModule
+        BrowserModule, DashboardModule, AppRoutingModule, NgbModule.forRoot()
     ],
     declarations: [
         AppComponent
