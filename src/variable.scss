@@ -1,1 +1,7 @@
 $default-background-color: rgb(255, 255, 255);
+$default-padding: 5px 15px;
+%main-padding {
+  padding: $default-padding;
+}
+
+
