@@ -1,0 +1,12 @@
+<div *ngIf="vm">
+    <h3>"{{ vm.name }}"</h3>
+    <div>
+        <label>Id: </label>{{ vm.id }}</div>
+    <div>
+        <label>Name: </label>
+        <input [(ngModel)]="vm.name" placeholder="name"/>
+    </div>
+    <p>
+        <button (click)="gotoListView()">Back</button>
+    </p>
+</div>
