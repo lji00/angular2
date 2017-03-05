@@ -1,18 +1,7 @@
 import { Injectable } from '@angular/core';
-//import {VM} from './vm';
-//import {VMS} from '../mock/vms-mock';
-export class VM {
-    constructor(public id: number, public name: string, public desc: string) { }
-}
-let VMS = [
-    new VM(11, 'CentralOS', 'test'),
-    new VM(12, 'Windows', 'test'),
-    new VM(13, 'OSX', 'test')
-    //{id: 11, name:'CentralOS', desc: 'test'},
-    //{id: 12, name: 'Windows', desc: 'test'},
-    //{id: 13, name: 'OSX', desc: 'test'}
+import {VM} from './vm';
+import {VMS} from '../mock/vms-mock';
 
-];
 let vmPromise = Promise.resolve(VMS);
 @Injectable()
 export class VMService {

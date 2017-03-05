@@ -1,8 +1,8 @@
 import 'rxjs/add/operator/switchMap';
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import {VM, VMService }  from './vm.service';
-//import {VM} from './vm';
+import {VMService }  from './vm.service';
+import {VM} from './vm';
 @Component({
     selector: 'vm-detail',
     templateUrl: './vm-detail.component.html',
@@ -13,7 +13,6 @@ import {VM, VMService }  from './vm.service';
 
 
 export class VMDetailComponent implements OnInit {
-    //@Input() vm:VM;
     vm:VM;
     constructor(private vmService:VMService, private router:Router, private route:ActivatedRoute) {}
     ngOnInit() {
