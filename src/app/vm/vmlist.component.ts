@@ -4,8 +4,8 @@ import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
 
 
-//import {VM} from './vm';
-import {VM, VMService} from './vm.service';
+import {VM} from './vm';
+import {VMService} from './vm.service';
 
 @Component({
     selector: 'vm',
@@ -24,13 +24,17 @@ export class VMListComponent implements OnInit {
         this.vms = this.route.params
             .switchMap((params:Params) => {
                 this.selectedId = +params['id'];
+                console.log('nginit');
                 return this.vmService.getVMs();
             });
 
     }
 
     onSelect(vm:VM):void {
-        this.router.navigate(['/vms', vm.id]);
+        //absolute route path
+        //this.router.navigate(['/vms', vm.id]);
+        this.router.navigate([vm.id],{ relativeTo: this.route });
+
     }
 
     isSelected(vm:VM) {

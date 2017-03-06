@@ -25,7 +25,10 @@ export class VMDetailComponent implements OnInit {
 
     gotoListView() {
         let vmId = this.vm ? this.vm.id : null;
-        this.router.navigate(['/vms', {id: vmId}]);
+        this.router.navigate(['../',  { id: vmId, relativeTo: this.route }]);
+        //absolute route
+        //this.router.navigate(['/vms', {id: vmId}]);
+
     }
 
 }
