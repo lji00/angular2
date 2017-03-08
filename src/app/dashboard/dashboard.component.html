@@ -1,9 +1,15 @@
 <div class="container">
     <h1>Dashboard</h1>
+
+    <p>Session ID: {{ sessionId | async }}</p>
+    <a id="anchor"></a>
+    <p>Token: {{ token | async }}</p>
     <ngb-tabset type="pills" vertical="true"f>
         <ngb-tab title="Manage">
             <template ngbTabContent>
                 <a routerLink="/vms">vms</a>
+                <a routerLink="/login" routerLinkActive="active">Login</a>
+
             </template>
         </ngb-tab>
         <ngb-tab title="Account">

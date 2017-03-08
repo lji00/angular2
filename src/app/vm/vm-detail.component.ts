@@ -20,10 +20,16 @@ export class VMDetailComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.route.params
-            // (+) converts string 'id' to a number
-            .switchMap((params:Params) => this.vmService.getVM(+params['id']))
-            .subscribe((vm:VM) => this.vm = vm);
+
+        //this.route.params
+        //    // (+) converts string 'id' to a number
+        //    .switchMap((params:Params) => this.vmService.getVM(+params['id']))
+        //.subscribe((vm:VM) => this.vm = vm);
+
+        this.route.data.subscribe((data:{vm:VM}) => {
+            console.log('nginitdetail');
+            this.vm = data.vm;
+        });
 
     }
 
