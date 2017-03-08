@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule }  from '@angular/platform-browser';
+import { CommonModule }   from '@angular/common';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule }    from '@angular/forms';
 import {VMListComponent } from './vmlist.component';
@@ -9,7 +9,7 @@ import {VMService} from './vm.service';
 
 @NgModule({
     imports: [
-        BrowserModule, VMRoutingModule, NgbModule, FormsModule
+        CommonModule, VMRoutingModule, NgbModule, FormsModule
     ],
     declarations: [
         VMListComponent, VMDetailComponent
