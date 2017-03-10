@@ -1,10 +1,12 @@
 import { Component, OnInit }  from '@angular/core';
 import { ActivatedRoute }     from '@angular/router';
 import { Observable }         from 'rxjs/Observable';
+import   './dashboard.component.html';
 import 'rxjs/add/operator/map';
 @Component({
     selector: 'dashboard',
-    templateUrl: './dashboard.component.html',
+    //templateUrl: './dashboard.component.html',
+    template: require('./dashboard.component.html'),
     styleUrls: ['./dashboard.scss']
 
 })

@@ -6,7 +6,7 @@ import { CanDeactivateGuard }    from '../auth/can-deactivate-guard.service';
 import {VMDetailResolver} from './vm-detail-resolver.service';
 
 const vmRoutes:Routes = [
-    {path: 'vms', component: VMListComponent},
+    {path: '', component: VMListComponent},
     //the detail router has to be at same level of list router if
     // we want detail view replacing the list view not added inside the list view,
     {
