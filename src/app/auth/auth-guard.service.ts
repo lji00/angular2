@@ -19,6 +19,7 @@ export class AuthGuard implements CanActivate , CanLoad{
     }
 
     checkLogin(url: string): boolean {
+        console.log('checkin');
         if (this.authService.isLoggedIn) { return true; }
 
         // Store the attempted URL for redirecting
@@ -32,6 +33,7 @@ export class AuthGuard implements CanActivate , CanLoad{
             fragment: 'anchor'
         };
 
+        console.log('querypr', navigationExtras);
         // Navigate to the login page with extras
         this.router.navigate(['/login'],navigationExtras);
         return false;
