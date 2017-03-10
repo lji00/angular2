@@ -28,7 +28,8 @@ module.exports = function(options) {
         //},
         {
           test: /\.ts$/,
-          loaders: ['@angularclass/hmr-loader', 'awesome-typescript-loader?' + 'inlineSourceMap=true&sourceMap=false', 'angular2-template-loader'],
+          loaders: ['@angularclass/hmr-loader', 'awesome-typescript-loader?' + 'inlineSourceMap=true&sourceMap=false',
+            'angular2-template-loader','angular-router-loader'],
           exclude: [/node_modules\/(?!(ng2-.+))/]
         },
         {
