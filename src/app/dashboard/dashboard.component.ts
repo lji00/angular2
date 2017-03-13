@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
     selector: 'dashboard',
     //templateUrl: './dashboard.component.html',
     template: require('./dashboard.component.html'),
-    styleUrls: ['./dashboard.scss']
+    styles: [require('./dashboard.scss')]
 
 })
 export class DashboardComponent implements  OnInit{

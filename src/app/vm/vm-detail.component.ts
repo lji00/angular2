@@ -4,10 +4,11 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import {VMService }  from './vm.service';
 import {VM} from './vm';
 import {DialogService} from '../dialog.service';
+import './vm-detail.component.html';
 @Component({
     selector: 'vm-detail',
-    templateUrl: './vm-detail.component.html',
-    styleUrls: ['./vm.scss']
+    template: require('./vm-detail.component.html'),
+    styles: ['./vm.scss']
 })
 
 
