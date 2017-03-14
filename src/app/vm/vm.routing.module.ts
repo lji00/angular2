@@ -9,8 +9,9 @@ const vmRoutes:Routes = [
     {path: '', component: VMListComponent},
     //the detail router has to be at same level of list router if
     // we want detail view replacing the list view not added inside the list view,
+    //change the path from 'vm/:id' to ':id' as 'vm' path is already declared for lazy module in app.routing.module
     {
-        path: 'vms/:id', component: VMDetailComponent, canDeactivate: [CanDeactivateGuard],
+        path: ':id', component: VMDetailComponent, canDeactivate: [CanDeactivateGuard],
         resolve: {
             vm: VMDetailResolver
 
