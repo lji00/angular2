@@ -39,12 +39,11 @@ export class LoginComponent {
                     preserveFragment: true
                 };
                 console.log('redirecturl', redirect);
-                console.log('navextra', navigationExtras);
                 // Redirect the user without navigationExtras
                 //with navigationExtras the dashboard router url(from RouterStateSnapshot.url)  has query prams
                 //this causes error: Cannot match any routes. URL Segment: 'dashboard%3Fsession_id%3D123456789%23anchor'
-                this.router.navigate([redirect], navigationExtras);
-                //this.router.navigate([redirect]);
+                //this.router.navigate([redirect], navigationExtras);
+                this.router.navigate([redirect]);
 
 
             }
