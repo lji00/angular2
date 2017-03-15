@@ -7,7 +7,7 @@ const routes: Routes = [
     // this is different than the angular doc which uses absolute path
     // https://angular.io/docs/ts/latest/guide/router.html#!#asynchronous-routing
     {path: 'vms', loadChildren: './vm/vm.module#VMModule', canLoad:[AuthGuard]},
-    { path: '', pathMatch: 'full', redirectTo: '/dashboard'}
+    { path: '', pathMatch: 'full', redirectTo: 'dashboard'}
 ];
 
 @NgModule({

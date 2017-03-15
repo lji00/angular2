@@ -19,11 +19,11 @@ export class AuthGuard implements CanActivate , CanLoad{
     }
 
     checkLogin(url: string): boolean {
-        console.log('checkin');
         if (this.authService.isLoggedIn) { return true; }
 
         // Store the attempted URL for redirecting
         this.authService.redirectUrl = url;
+        console.log('not loged in redirect url', url);
         // Create a dummy session id
         let sessionId = 123456789;
         // Set our navigation extras object
@@ -32,14 +32,13 @@ export class AuthGuard implements CanActivate , CanLoad{
             queryParams: { 'session_id': sessionId },
             fragment: 'anchor'
         };
-
-        console.log('querypr', navigationExtras);
         // Navigate to the login page with extras
         this.router.navigate(['/login'],navigationExtras);
         return false;
     }
     canLoad(route: Route): boolean {
         let url = `/${route.path}`;
+        console.log('in canload');
 
         return this.checkLogin(url);
     }
