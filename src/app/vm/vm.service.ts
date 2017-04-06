@@ -1,23 +1,26 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject} from '@angular/core';
 import {Headers, Http} from '@angular/http';
 import {VM} from './vm';
 import 'rxjs/add/operator/toPromise';
+//import {AppSettings} from '../constants';
+import {VMS_URL} from '../constants';
+//import { APP_CONFIG, IAppConfig } from '../app.config';
+
 
 //let vmPromise = Promise.resolve(VMS);
 @Injectable()
 export class VMService {
-    private vmsUrl = 'api/vms';
+    vmurl= VMS_URL;
     constructor(private http: Http) {}
     getVMs():Promise<VM[]> {
-
-        return this.http.get(this.vmsUrl)
+        return this.http.get(this.vmurl)
             .toPromise()
             .then(response => response.json().data as VM[])
             .catch(this.handleError);
     }
 
     getVM(id:number | string) {
-        const url = `${this.vmsUrl}/${id}`;
+        const url = `${this.vmurl}/${id}`;
         return this.http.get(url)
             .toPromise()
             .then(response => response.json().data as VM)
