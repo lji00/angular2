@@ -13,6 +13,8 @@ import { DialogService }           from './dialog.service';
 //imports for loading and configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './mock/in-memory-data.service';
+import { APP_CONFIG, AppConfig } from './app.config';
+
 
 @NgModule({
     imports: [
@@ -25,7 +27,7 @@ import { InMemoryDataService } from './mock/in-memory-data.service';
         AppComponent
     ],
     providers: [
-        DialogService
+        DialogService,{ provide: APP_CONFIG, useValue: AppConfig }
     ],
     bootstrap: [AppComponent]
 })

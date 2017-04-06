@@ -2,16 +2,15 @@ import { Injectable, Inject} from '@angular/core';
 import {Headers, Http} from '@angular/http';
 import {VM} from './vm';
 import 'rxjs/add/operator/toPromise';
-//import {AppSettings} from '../constants';
-import {VMS_URL} from '../constants';
-//import { APP_CONFIG, IAppConfig } from '../app.config';
+//import {VMS_URL} from '../constants';
+import { APP_CONFIG, IAppConfig } from '../app.config';
 
 
 //let vmPromise = Promise.resolve(VMS);
 @Injectable()
 export class VMService {
-    vmurl= VMS_URL;
-    constructor(private http: Http) {}
+    vmurl= this.config.apiEndpoint;
+    constructor(private http: Http, @Inject(APP_CONFIG) private config: IAppConfig) {}
     getVMs():Promise<VM[]> {
         return this.http.get(this.vmurl)
             .toPromise()
