@@ -7,14 +7,18 @@ import {
     CanLoad, Route
 }                           from '@angular/router';
 import { AuthService }      from './auth.service';
+import {BASE_ROUTER} from '../constants';
+
 
 @Injectable()
 export class AuthGuard implements CanActivate , CanLoad{
+    base_router = BASE_ROUTER;
+
     constructor(private authService: AuthService, private router: Router) {}
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
         let url: string = state.url;
-
+console.log('state url', state.url);
         return this.checkLogin(url);
     }
 
@@ -37,8 +41,9 @@ export class AuthGuard implements CanActivate , CanLoad{
         return false;
     }
     canLoad(route: Route): boolean {
-        let url = `/${route.path}`;
-        console.log('in canload');
+        //lazy load for child route, the path doesn't contain parent path,
+        // so it is not full url in browser address bar
+        let url = `${this.base_router}/${route.path}`;
 
         return this.checkLogin(url);
     }

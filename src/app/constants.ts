@@ -6,4 +6,6 @@
 //}
 export const API_BASE_URL = 'api/';
 export const VMS_URL: string = `${API_BASE_URL}vms`;
+export const BASE_ROUTER ='/dashboard';
+export const VM_LIST_ROUTER = `${BASE_ROUTER}/vms`;
 

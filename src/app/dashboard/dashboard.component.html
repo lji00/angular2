@@ -4,19 +4,27 @@
     <p>Session ID: {{ sessionId | async }}</p>
     <a id="anchor"></a>
     <p>Token: {{ token | async }}</p>
-    <ngb-tabset type="pills" vertical="true"f>
-        <ngb-tab title="Manage">
-            <template ngbTabContent>
-                <a routerLink="/vms">vms</a>
-                <a routerLink="/login" routerLinkActive="active">Login</a>
+    <!--<ngb-tabset type="pills" vertical="true" (tabChange)="beforeChange($event)">-->
+        <!--<ngb-tab>-->
+        <!--&lt;!&ndash;<ngb-tab title="Manage" id="test">&ndash;&gt;-->
+        <!--<template ngbTabTitle>-->
+            <!--<a routerLink="/vms">vms</a>-->
+        <!--</template>-->
+            <!--<template ngbTabContent>-->
+        <!--&lt;!&ndash;<a routerLink="/vms">vms</a>&ndash;&gt;-->
+        <!--&lt;!&ndash;<a routerLink="/login" routerLinkActive="active">Login</a>&ndash;&gt;-->
 
-            </template>
-        </ngb-tab>
-        <ngb-tab title="Account">
-            <template ngbTabContent>
+    <!--</template>-->
+        <!--</ngb-tab>-->
+        <!--<ngb-tab title="Account" id="{{subRouters[0]}}">-->
+            <!--<template ngbTabContent>-->
 
-            </template>
-        </ngb-tab>
-    </ngb-tabset>
+            <!--</template>-->
+        <!--</ngb-tab>-->
+    <!--</ngb-tabset>-->
+    <nav>
+        <a routerLink="{{VM_ROUTER}}" routerLinkActive="active">VM</a>
+        <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+    </nav>
     <router-outlet></router-outlet>
 </div>
